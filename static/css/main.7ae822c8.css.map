@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.7ae822c8.css","mappings":"AAAA,yBACI,+BACF","sources":["index.css"],"sourcesContent":[".image-container.animate {\r\n    transform: translate(-50%, -100%);\r\n  }"],"names":[],"sourceRoot":""}
