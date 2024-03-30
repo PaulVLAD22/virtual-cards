@@ -1,24 +1,38 @@
-import * as React from "react"
+import * as React from "react";
 import {
   chakra,
   keyframes,
   ImageProps,
   forwardRef,
   usePrefersReducedMotion,
-} from "@chakra-ui/react"
-import logo from "./logo.svg"
+  Center,
+} from "@chakra-ui/react";
+import logo from "./assets/logo.png";
 
-const spin = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`
+// Define a keyframe animation for moving the image from the center to the top
+const moveUp = keyframes`
+  0% { transform: translateY(50vh); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 1; }
+`;
 
 export const Logo = forwardRef<ImageProps, "img">((props, ref) => {
-  const prefersReducedMotion = usePrefersReducedMotion()
+  const prefersReducedMotion = usePrefersReducedMotion();
 
+  // Apply the moveUp animation unless the user prefers reduced motion
   const animation = prefersReducedMotion
     ? undefined
-    : `${spin} infinite 20s linear`
+    : `${moveUp} 1.5s ease-in-out forwards`;
 
-  return <chakra.img animation={animation} src={logo} ref={ref} {...props} />
-})
+  return (
+    <Center h="100vh">
+    <chakra.img
+      src={logo}
+      ref={ref}
+      animation={animation}
+      maxW={"90%"}
+      transform="translate(-50%, -50%)"
+      {...props}
+    />
+    </Center>
+  );
+});
