@@ -67,6 +67,8 @@ const UserProfilePage = () => {
       </VStack>
       <AdditionalInfo
         contactInfo={{
+          firstName: firstName || undefined,
+          lastName: lastName || undefined,
           phone: mobilePhone || undefined,
           email: email || undefined,
           website: "https://www.crystal-logistics-services.com ",

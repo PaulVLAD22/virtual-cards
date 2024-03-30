@@ -1,13 +1,13 @@
 import { Box, Button, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import {
-    FaEnvelope,
-    FaFacebook,
-    FaGlobe,
-    FaInstagram,
-    FaLinkedin,
-    FaMapMarkerAlt,
-    FaPhone,
+  FaEnvelope,
+  FaFacebook,
+  FaGlobe,
+  FaInstagram,
+  FaLinkedin,
+  FaMapMarkerAlt,
+  FaPhone,
 } from "react-icons/fa";
 import ContactInfoItem from "./ContactInfoItem";
 import SocialMediaLink from "./SocialMediaLink";
@@ -17,6 +17,8 @@ interface ContactInfo {
   email?: string;
   website?: string;
   location?: string;
+  firstName?: string;
+  lastName?: string;
   fb?: string;
   linkedin?: string;
   insta?: string;
@@ -32,12 +34,35 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
     email = "Not provided",
     website = "Not provided",
     location = "Not provided",
+    firstName = "Not provided",
+    lastName = "Not provided",
     fb = "https://www.facebook.com/crystallogisticsservices",
     linkedin = "https://ro.linkedin.com/company/crystal-logistics-services",
     insta = "https://www.instagram.com/crystallogisticsservices/",
   },
 }) => {
   const addressEncoded = encodeURIComponent(location);
+
+  const handleDownloadVCard = () => {
+    const vCardData = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        `N:;${firstName} ${lastName};;;`,
+        `FN:${lastName}`,
+        `TEL;TYPE=WORK,VOICE:${phone}`,
+        `EMAIL;TYPE=PREF,INTERNET:${email}`,
+        'END:VCARD'
+      ].join('\n');
+
+    const blob = new Blob([vCardData], { type: "text/vcard" });
+    const href = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = "contact.vcf"; // The file name for the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Box p={5} bg="white" boxShadow="md" borderRadius="lg">
@@ -100,6 +125,9 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
             platform="Instagram"
             href="https://www.instagram.com/crystallogisticsservices/"
           />
+          <Button colorScheme="blue" onClick={handleDownloadVCard}>
+            Add contact
+          </Button>
         </VStack>
       </VStack>
     </Box>
