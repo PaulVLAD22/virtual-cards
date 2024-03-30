@@ -20,6 +20,7 @@ const UserProfilePage = () => {
   const lastName = searchParams.get("lastName");
   const mobilePhone = searchParams.get("mobilePhone");
   const email = searchParams.get("email");
+  const position = searchParams.get("position");
   return (
     <Box bg="#EAC31F" w="full" p={4} color="white">
       <VStack spacing={4} align="stretch" marginBottom={10}>
@@ -40,7 +41,7 @@ const UserProfilePage = () => {
             {`${firstName} ${lastName}`}
           </Text>
           <Text fontSize="md">Crystal Logistics Services</Text>
-          <Text fontSize="md">Freight Forwarder</Text>
+          <Text fontSize="md">{position}</Text>
         </Box>
         <HStack justify="center" spacing={10}>
           <Link href={`tel:+${mobilePhone}`} isExternal>
