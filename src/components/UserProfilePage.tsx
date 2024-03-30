@@ -2,28 +2,24 @@ import {
   Box,
   Center,
   HStack,
-  Icon,
   IconButton,
   Image,
   Link,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
-import MapButton from "./MapButton";
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import AdditionalInfo from "./AdditionalInfo";
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import MapButton from "./MapButton";
 
 const UserProfilePage = () => {
-  const query = useQuery();
-  const firstName = query.get("firstName");
-  const lastName = query.get("lastName");
-  const mobilePhone = query.get("mobilePhone");
-  const email = query.get("email");
+  const [searchParams] = useSearchParams();
+  console.log(searchParams)
+  const firstName = searchParams.get("firstName");
+  const lastName = searchParams.get("lastName");
+  const mobilePhone = searchParams.get("mobilePhone");
+  const email = searchParams.get("email");
   return (
     <Box bg="yellow.400" w="full" p={4} color="white">
       <VStack spacing={4} align="stretch" marginBottom={10}>

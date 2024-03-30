@@ -14,7 +14,7 @@ export const App = () => (
   <ChakraProvider>
     <Router>
       <Routes>
-        <Route path="/user" Component={UserProfile}>
+        <Route path="/*" Component={UserProfile}>
         </Route>
         {/* Other routes here */}
       </Routes>
