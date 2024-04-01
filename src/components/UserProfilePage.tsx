@@ -21,6 +21,7 @@ const UserProfilePage = () => {
   const mobilePhone = searchParams.get("mobilePhone");
   const email = searchParams.get("email");
   const position = searchParams.get("position");
+  const image = searchParams.get("image");
   return (
     <Box bg="#EAC31F" w="full" p={4} color="white">
       <VStack spacing={4} align="stretch" marginBottom={10}>
@@ -28,7 +29,7 @@ const UserProfilePage = () => {
           <Image
             borderRadius="full"
             boxSize="150px"
-            src="https://i.imgur.com/YHnWS6n.png"
+            src={image===null ? "https://i.imgur.com/YHnWS6n.png" : image}
             alt="Profile image"
             objectFit="contain"
             backgroundColor={"white"}
