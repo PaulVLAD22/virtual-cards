@@ -39,7 +39,7 @@ const UserProfilePage = () => {
         mobilePhone: "0755333185",
         email: "sales@crystalservices.ro",
         position: "Road Transport Consultant",
-        image: null,
+        image: "https://i.imgur.com/yQy7h5a.jpeg",
       },
       {
         firstName: "Ramona",
@@ -47,7 +47,7 @@ const UserProfilePage = () => {
         mobilePhone: "0749115477",
         email: "ramona.atanasiu@crystalservices.ro",
         position: "Road Transport Consultant",
-        image: null,
+        image: "https://i.imgur.com/YYmxKfn.jpeg",
       },
       {
         firstName: "Alin",
@@ -55,7 +55,7 @@ const UserProfilePage = () => {
         mobilePhone: "0752110056",
         email: "vanzari@crystalservices.ro",
         position: "Head of Road Transport pricing department",
-        image: null,
+        image: "https://i.imgur.com/x76OyYi.jpeg",
       },
       {
         firstName: "Rafael Emre",
@@ -119,7 +119,7 @@ const UserProfilePage = () => {
         mobilePhone: "0760248087",
         email: "bogdan.idita@crystalservices.ro",
         position: "Road Transport Consultant",
-        image: null,
+        image: "https://i.imgur.com/6GpJjK7.jpeg",
       },
     ];
 
