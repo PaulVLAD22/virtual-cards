@@ -121,6 +121,14 @@ const UserProfilePage = () => {
         position: "Road Transport Consultant",
         image: "https://i.imgur.com/6GpJjK7.jpeg",
       },
+      {
+        firstName: "Diana",
+        lastName: "Bejenaru",
+        mobilePhone: "0727101633",
+        email: "diana.bejenaru@crystalservices.ro",
+        position: "In-House Contracts Counsel",
+        image: "https://i.imgur.com/OCDYCGg.png",
+      },
     ];
 
     // Verifică dacă detaliile din URL corespund cu oricare din detaliile așteptate
