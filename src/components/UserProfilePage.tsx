@@ -15,137 +15,137 @@ import MapButton from "./MapButton";
 
 const UserProfilePage = () => {
   const [searchParams] = useSearchParams();
-  console.log(searchParams);
-  const firstName = searchParams.get("firstName");
-  const lastName = searchParams.get("lastName");
-  const mobilePhone = searchParams.get("mobilePhone");
-  const email = searchParams.get("email");
-  const position = searchParams.get("position");
-  const image = searchParams.get("image");
+  const userId = searchParams.get("id");
 
-  const verifyDetails = () => {
-    // Obținerea valorilor din URL
-    const firstName = searchParams.get("firstName");
-    const lastName = searchParams.get("lastName");
-    const mobilePhone = searchParams.get("mobilePhone");
-    const email = searchParams.get("email");
-    const position = searchParams.get("position");
-    const image = searchParams.get("image");
+  const expectedDetails = [
+    {
+      id: "1",
+      firstName: "Bogdan",
+      lastName: "Ciobanoiu",
+      mobilePhone: "0755333185",
+      email: "Bogdan.c@crystal-logistics-services.com",
+      position: "Manager of Freight Forwarding Department",
+      image: "https://i.imgur.com/yQy7h5a.jpeg",
+    },
+    {
+      id: "3",
+      firstName: "Alin",
+      lastName: "Liță",
+      mobilePhone: "0752110056",
+      email: "Alin.l@crystal-logistics-services.com",
+      position: "Manager of Freight forwarding Department",
+      image: "https://i.imgur.com/x76OyYi.jpeg",
+    },
+    {
+      id: "4",
+      firstName: "Rafael Emre",
+      lastName: "Onișoară",
+      mobilePhone: "0771542171",
+      email: "rafael.o@crystal-logistics-services.com",
+      position: "CEO",
+      image: "https://i.imgur.com/VIuQ6n2.png",
+    },
+    {
+      id: "5",
+      firstName: "Tiberiu",
+      lastName: "Hulea",
+      mobilePhone: "0747233715",
+      email: "transporturi@crystalservices.ro",
+      position: "Freight forwarder",
+      image: null,
+    },
+    {
+      id: "7",
+      firstName: "Dragos",
+      lastName: "Morosanu",
+      mobilePhone: "0752110078",
+      email: "transport@crystalservices.ro",
+      position: "Freight forwarder",
+      image: null,
+    },
+    {
+      id: "8",
+      firstName: "Andrei",
+      lastName: "Strat",
+      mobilePhone: "0749115427",
+      email: "andrei.strat@crystalservices.ro",
+      position: "Freight forwarder",
+      image: null,
+    },
+    {
+      id: "9",
+      firstName: "Robert",
+      lastName: "Florea",
+      mobilePhone: "0784874772",
+      email: "Robert.f@crystal-logistics-services.com",
+      position: "Senior Freight Forwarder",
+      image: null,
+    },
+    {
+      id: "10",
+      firstName: "Mario",
+      lastName: "Barleanu",
+      mobilePhone: "0747235449",
+      email: "Mario.b@crystal-logistics-services.com",
+      position: "Freight forwarder",
+      image: null,
+    },
+    {
+      id: "13",
+      firstName: "Catalin",
+      lastName: "Ermalae",
+      mobilePhone: "0760249346",
+      email: "Catalin.e@crystal-logistics-services.com",
+      position: "Freight Forwarder",
+      image: null,
+    },
+    {
+      id: "14",
+      firstName: "Bogdan",
+      lastName: "Serafim",
+      mobilePhone: "0749144049",
+      email: "Bogdan.s@crystal-logistics-services.com",
+      position: "Manager of Freight forwarding Department",
+      image: null,
+    },
+    {
+      id: "15",
+      firstName: "Bianca",
+      lastName: "Onisoara",
+      mobilePhone: "0760780291",
+      email: "hr@crystal-logistics-services.com",
+      position: "Human Resources Manager",
+      image: null,
+    },
+    {
+      id: "16",
+      firstName: "Roberto",
+      lastName: "Coică",
+      mobilePhone: "0742124262",
+      email: "Roberto.c@crystal-logistics-services.com",
+      position: "Freight Forwarder",
+      image: null,
+    },
+    {
+      id: "17",
+      firstName: "Ionut",
+      lastName: "Dumitru",
+      mobilePhone: "0736936629",
+      email: "Ionut.d@crystal-logistics-services.com",
+      position: "Freight Forwarder",
+      image: null,
+    },
+  ];
 
-    const expectedDetails = [
-      {
-        firstName: "Bogdan",
-        lastName: "Ciobanoiu",
-        mobilePhone: "0755333185",
-        email: "sales@crystalservices.ro",
-        position: "Road Transport Consultant",
-        image: "https://i.imgur.com/yQy7h5a.jpeg",
-      },
-      {
-        firstName: "Ramona",
-        lastName: "Atanasiu",
-        mobilePhone: "0749115477",
-        email: "ramona.atanasiu@crystalservices.ro",
-        position: "Road Transport Consultant",
-        image: "https://i.imgur.com/YYmxKfn.jpeg",
-      },
-      {
-        firstName: "Alin",
-        lastName: "Liță",
-        mobilePhone: "0752110056",
-        email: "vanzari@crystalservices.ro",
-        position: "Head of Road Transport pricing department",
-        image: "https://i.imgur.com/x76OyYi.jpeg",
-      },
-      {
-        firstName: "Rafael Emre",
-        lastName: "Onișoară",
-        mobilePhone: "0771542171",
-        email: "office@crystalservices.ro",
-        position: "Director General",
-        image: "https://i.imgur.com/VIuQ6n2.png",
-      },
-      {
-        firstName: "Tiberiu",
-        lastName: "Hulea",
-        mobilePhone: "0747233715",
-        email: "transporturi@crystalservices.ro",
-        position: "Freight forwarder",
-        image: null,
-      },
-      {
-        firstName: "Cosmin",
-        lastName: "Solonariu",
-        mobilePhone: "0784253238",
-        email: "cosmin.solonariu@crystalservices.ro",
-        position: "Freight forwarder",
-        image: null,
-      },
-      {
-        firstName: "Dragos",
-        lastName: "Morosanu",
-        mobilePhone: "0752110078",
-        email: "transport@crystalservices.ro",
-        position: "Freight forwarder",
-        image: null,
-      },
-      {
-        firstName: "Andrei",
-        lastName: "Strat",
-        mobilePhone: "0749115427",
-        email: "andrei.strat@crystalservices.ro",
-        position: "Freight forwarder",
-        image: null,
-      },
-      {
-        firstName: "Robert",
-        lastName: "Florea",
-        mobilePhone: "0784874772",
-        email: "robert.florea@crystalservices.ro",
-        position: "Freight forwarder",
-        image: null,
-      },
-      {
-        firstName: "Mario",
-        lastName: "Barleanu",
-        mobilePhone: "0747235449",
-        email: "mario.barleanu@crystalservices.ro",
-        position: "Freight forwarder",
-        image: null,
-      },
-      {
-        firstName: "Bogdan",
-        lastName: "Idita",
-        mobilePhone: "0760248087",
-        email: "bogdan.idita@crystalservices.ro",
-        position: "Road Transport Consultant",
-        image: "https://i.imgur.com/6GpJjK7.jpeg",
-      },
-      {
-        firstName: "Diana",
-        lastName: "Bejenaru",
-        mobilePhone: "0727101633",
-        email: "diana.bejenaru@crystalservices.ro",
-        position: "In-House Contracts Counsel",
-        image: "https://i.imgur.com/OCDYCGg.png",
-      },
-    ];
+  const userDetails = expectedDetails.find((detail) => detail.id === userId);
 
-    // Verifică dacă detaliile din URL corespund cu oricare din detaliile așteptate
-    return expectedDetails.some(
-      (detail) =>
-        detail.firstName === firstName &&
-        detail.lastName === lastName &&
-        detail.mobilePhone === mobilePhone &&
-        detail.email === email &&
-        detail.position === position &&
-        (detail.image === image || detail.image === null) // Pentru imagine, acceptăm și cazul în care nu există imaginea în detaliile așteptate
-    );
-  };
-
-  if (verifyDetails() === false) {
+  if (!userDetails) {
     return <div>Wrong details!</div>;
   }
+
+  const { firstName, lastName, mobilePhone, email, position, image } =
+    userDetails;
+
   return (
     <Box bg="#EAC31F" w="full" p={4} color="white">
       <VStack spacing={4} align="stretch" marginBottom={10}>
