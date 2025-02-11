@@ -169,7 +169,7 @@ const UserProfilePage = () => {
       mobilePhone: "0760248087",
       email: "bogdan.i@crystal-logistics-services.com",
       position: "Manager of Sales Department",
-      image: null,
+      image: "https://i.imgur.com/B5dU9Ie.jpeg",
     },
   ];
 
