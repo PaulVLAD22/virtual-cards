@@ -135,6 +135,42 @@ const UserProfilePage = () => {
       position: "Freight Forwarder",
       image: null,
     },
+    {
+      id: "18",
+      firstName: "Alexandru",
+      lastName: "Paraschiv",
+      mobilePhone: "0730867318",
+      email: "alexandru.p@crystal-logistics-services.com",
+      position: "Manager of Sales Department",
+      image: "https://i.imgur.com/C5Xjvta.jpeg",
+    },
+    {
+      id: "19",
+      firstName: "Bogdan",
+      lastName: "Iancu",
+      mobilePhone: "0736750851",
+      email: "bogdan.ia@crystal-logistics-services.com",
+      position: "Senior Freight Forwarder",
+      image: "https://i.imgur.com/qmnC7a5.jpeg",
+    },
+    {
+      id: "20",
+      firstName: "Andrei",
+      lastName: "Pauna",
+      mobilePhone: "0749119277",
+      email: "andrei.p@crystal-logistics-services.com",
+      position: "Junior Sales Representative",
+      image: "https://i.imgur.com/o7JC7bH.jpeg",
+    },
+    {
+      id: "21",
+      firstName: "Bogdan",
+      lastName: "Idita",
+      mobilePhone: "0760248087",
+      email: "bogdan.i@crystal-logistics-services.com",
+      position: "Manager of Sales Department",
+      image: null,
+    },
   ];
 
   const userDetails = expectedDetails.find((detail) => detail.id === userId);
